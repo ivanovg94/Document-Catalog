@@ -36,6 +36,7 @@ namespace DocCat.ViewModels
             set { }
         }
 
+        public string Status { get; set; }
 
         public string Description
         {

@@ -17,7 +17,7 @@
             <asp:BoundField DataField="Name" HeaderText="Име" />
             <asp:BoundField DataField="Type" HeaderText="Тип" />
             <asp:BoundField DataField="IssueBy" HeaderText="Издаден от" />
-            <asp:BoundField DataField="RequestStatus" HeaderText="" />
+            <asp:BoundField DataField="Status" HeaderText="Статус" />
 
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
@@ -25,12 +25,12 @@
                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField ShowHeader="False">
+          <%--  <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
                     <asp:Button ID="btnApprove" runat="server" Text="Одобри заявка" CommandName="Approve"
                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
         </Columns>
     </asp:GridView>
 

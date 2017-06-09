@@ -1,25 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyDocuments.aspx.cs" Inherits="DocCat.Views.Customer.MyDocuments" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RequestedDocuments.aspx.cs" Inherits="DocCat.Views.Operator.RequestedDocuments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
+    <h3>Всички въведени документи</h3>
+    <div class="clear"></div>
     <asp:GridView ID="DocumentsGV"
         runat="server"
         CssClass="table table-striped table-bordered table-condensed table-hover"
-        OnRowCommand="Grid_RowCommand"
         OnRowDataBound="DocumentsGV_RowDataBound"
-        ItemType="DocCat.ViewModels.CustomerDocsVM"
+        ItemType="DocCat.ViewModels.OperatorDocsVM"
         AutoGenerateColumns="false">
-
 
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" />
             <asp:BoundField DataField="Name" HeaderText="Име" />
             <asp:BoundField DataField="Type" HeaderText="Тип" />
-            <asp:BoundField DataField="IssueTo" HeaderText="Издаден на" />
-            <asp:BoundField DataField="Date" HeaderText="Дата на издаване" />
-            <asp:BoundField DataField="ShortDescription" HeaderText="Описание" />
-            <asp:BoundField DataField="Status" HeaderText="Статут" />
+            <asp:BoundField DataField="IssueBy" HeaderText="Издаден от" />
+            <asp:BoundField DataField="Status" HeaderText="Статус" />
 
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
@@ -29,20 +26,11 @@
             </asp:TemplateField>
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
-                    <asp:Button ID="btnRequest" runat="server" Text="Заяви" CommandName="Request"
-                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" AutoPostBack="true" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField ShowHeader="False">
-                <ItemTemplate>
-                    <asp:Button ID="btnDownload" runat="server" Text="Изтегли" CommandName="Download"
+                    <asp:Button ID="btnApprove" runat="server" Text="Одобри заявка" CommandName="Approve"
                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-
-
-
 
 </asp:Content>

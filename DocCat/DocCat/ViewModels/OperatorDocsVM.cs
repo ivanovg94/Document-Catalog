@@ -11,6 +11,7 @@ namespace DocCat.ViewModels
         public string Name { get; set; }
         public string Type { get; set; }
         public string IssueBy { get; set; }
-        public int RequestStatus { get; set; }
+        public string  Status { get; set; }
+
     }
 }

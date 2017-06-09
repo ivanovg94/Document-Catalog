@@ -101,7 +101,7 @@
                                                 <li><a runat="server" href="~/Account/Register">Нов потребител</a></li>
                                                 <li class="divider"></li>
                                                 <li><a runat="server" href="~/Views/Admin/AllCustomers.aspx">Всички клиенти</a></li>
-                                                <li><a runat="server" href="#">Всички оператори</a></li>
+                                                <li><a runat="server" href="~/Views/Admin/AllOperators.aspx">Всички оператори</a></li>
 
                                             </ul>
                                         </li>
@@ -125,6 +125,8 @@
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a runat="server" href="~/Views/Operator/NewDocument.aspx">Нов документ</a></li>
                                                 <li><a runat="server" href="~/Views/Operator/AllDocuments.aspx">Всички документи</a></li>
+                                                <li><a runat="server" href="~/Views/Operator/RequestedDocuments.aspx">Заявени документи</a></li>
+
                                             </ul>
                                         </li>
                                     </ul>

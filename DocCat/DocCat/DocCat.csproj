@@ -249,6 +249,7 @@
     <Content Include="Views\Customer\MyDocuments.aspx" />
     <Content Include="Views\Operator\AllDocuments.aspx" />
     <Content Include="Views\Operator\NewDocument.aspx" />
+    <Content Include="Views\Operator\RequestedDocuments.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -491,6 +492,13 @@
     </Compile>
     <Compile Include="Views\Operator\NewDocument.aspx.designer.cs">
       <DependentUpon>NewDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operator\RequestedDocuments.aspx.cs">
+      <DependentUpon>RequestedDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operator\RequestedDocuments.aspx.designer.cs">
+      <DependentUpon>RequestedDocuments.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

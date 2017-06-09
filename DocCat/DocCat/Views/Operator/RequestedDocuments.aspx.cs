@@ -4,7 +4,6 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,10 +11,14 @@ using System.Web.UI.WebControls;
 
 namespace DocCat.Views.Operator
 {
-    public partial class AllDocuments : System.Web.UI.Page
+    public partial class RequestedDocuments : System.Web.UI.Page
     {
+
         DCDbContext context = new DCDbContext();
-         
+        private const int notRequested = 1;
+        private const int requested = 2;
+        private const int approved = 3; 
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +29,7 @@ namespace DocCat.Views.Operator
 
                 var gridData = context.Documents
                       .Where(x => x.SavedBy == currentUser.Name)
+                      .Where(x=>x.RequestStatusId==requested)
                       .Include(x => x.DocType)
                       .Include(x => x.RequestStatus)
                                             .Select(x => new OperatorDocsVM()
@@ -62,14 +66,15 @@ namespace DocCat.Views.Operator
                 // Response.Redirect("~/Views/Manage/Projects/Details.aspx?id=" + id.ToString());
             }
 
-            //if (e.CommandName == "Approve")
-            //{
-            //    index = Convert.ToInt32(e.CommandArgument);
-            //    row = grid.Rows[index];
-            //    id = int.Parse(row.Cells[0].Text);
-            //    var selectedDoc = context.Documents.Find(id);
-            //    selectedDoc.RequestStatusId = 3;
-            //}
+            if (e.CommandName == "Approve")
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                row = grid.Rows[index];
+                id = int.Parse(row.Cells[0].Text);
+                var selectedDoc = context.Documents.Find(id);
+                selectedDoc.RequestStatusId = approved;
+                context.SaveChanges();
+            }
         }
     }
 }
