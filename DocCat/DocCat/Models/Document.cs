@@ -30,7 +30,7 @@ namespace DocCat.Models
         [ForeignKey("IssuedBy")]
         public string IssuedById { get; set; }
 
-        public ApplicationUser IssuedBy { get; set; }
+        public virtual ApplicationUser IssuedBy { get; set; }
 
         public string SavedBy { get; set; }
 

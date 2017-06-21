@@ -247,6 +247,7 @@
     <Content Include="Views\Admin\NewDocType.aspx" />
     <Content Include="Views\Admin\NewLocation.aspx" />
     <Content Include="Views\Customer\MyDocuments.aspx" />
+    <Content Include="Views\Details\DocumentDetails.aspx" />
     <Content Include="Views\Operator\AllDocuments.aspx" />
     <Content Include="Views\Operator\NewDocument.aspx" />
     <Content Include="Views\Operator\RequestedDocuments.aspx" />
@@ -390,6 +391,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Message\MessageBox.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Box.cs" />
@@ -478,6 +480,13 @@
     </Compile>
     <Compile Include="Views\Customer\MyDocuments.aspx.designer.cs">
       <DependentUpon>MyDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Details\DocumentDetails.aspx.cs">
+      <DependentUpon>DocumentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Details\DocumentDetails.aspx.designer.cs">
+      <DependentUpon>DocumentDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Operator\AllDocuments.aspx.cs">
       <DependentUpon>AllDocuments.aspx</DependentUpon>

@@ -67,7 +67,7 @@ namespace DocCat.Views.Customer
                 index = Convert.ToInt32(e.CommandArgument);
                 row = grid.Rows[index];
                 id = int.Parse(row.Cells[0].Text);
-                // Response.Redirect("~/Views/Manage/Projects/Details.aspx?id=" + id.ToString());
+                Response.Redirect("~/Views/Details/DocumentDetails.aspx?id=" + id.ToString());
             }
 
 

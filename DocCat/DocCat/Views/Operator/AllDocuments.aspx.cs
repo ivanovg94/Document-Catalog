@@ -59,17 +59,17 @@ namespace DocCat.Views.Operator
                 index = Convert.ToInt32(e.CommandArgument);
                 row = grid.Rows[index];
                 id = int.Parse(row.Cells[0].Text);
-                // Response.Redirect("~/Views/Manage/Projects/Details.aspx?id=" + id.ToString());
+                Response.Redirect("~/Views/Details/DocumentDetails.aspx?id=" + id.ToString());
             }
 
-            //if (e.CommandName == "Approve")
-            //{
-            //    index = Convert.ToInt32(e.CommandArgument);
-            //    row = grid.Rows[index];
-            //    id = int.Parse(row.Cells[0].Text);
-            //    var selectedDoc = context.Documents.Find(id);
-            //    selectedDoc.RequestStatusId = 3;
-            //}
+            if (e.CommandName == "Approve")
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                row = grid.Rows[index];
+                id = int.Parse(row.Cells[0].Text);
+                var selectedDoc = context.Documents.Find(id);
+                selectedDoc.RequestStatusId = 3;
+            }
         }
     }
 }

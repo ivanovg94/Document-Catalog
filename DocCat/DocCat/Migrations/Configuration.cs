@@ -9,7 +9,7 @@ namespace DocCat.Migrations
     using System.Linq;
 
 
-    public sealed class Configuration : DbMigrationsConfiguration<DocCat.Models.DCDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<DCDbContext>
     {
         public Configuration()
         {
@@ -44,7 +44,7 @@ namespace DocCat.Migrations
             context.RequestStatus.AddOrUpdate(new RequestStatus()
             {
                 Id = 3,
-                Name = "Одобрен"
+                Name = "Изпратен"
             });
         }
 

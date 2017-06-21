@@ -1,5 +1,4 @@
-﻿ 
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AllDocuments.aspx.cs" Inherits="DocCat.Views.Operator.AllDocuments" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AllDocuments.aspx.cs" Inherits="DocCat.Views.Operator.AllDocuments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Всички въведени документи</h3>
@@ -8,6 +7,7 @@
         runat="server"
         CssClass="table table-striped table-bordered table-condensed table-hover"
         OnRowDataBound="DocumentsGV_RowDataBound"
+        OnRowCommand="Grid_RowCommand"
         ItemType="DocCat.ViewModels.OperatorDocsVM"
         AutoGenerateColumns="false">
 
@@ -25,7 +25,7 @@
                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                 </ItemTemplate>
             </asp:TemplateField>
-          <%--  <asp:TemplateField ShowHeader="False">
+            <%--  <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
                     <asp:Button ID="btnApprove" runat="server" Text="Одобри заявка" CommandName="Approve"
                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
